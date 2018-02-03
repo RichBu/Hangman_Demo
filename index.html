@@ -83,8 +83,7 @@
             <h4>
                 <p>Help / About</p>
             </h4>
-            <p>Hangman Game by Rich Budek</p>
-            <p>for Northwestern University Full Stack Developer Program</p>
+            <p>Hangman Game Demonstration by Rich Budek</p>
             <p></p>
             <p>This game is meant to run inside of a browser using Javascript. The windows is responsive (liquid) will change
                 based on the size of the screen, with buttons moving, etc. as the screen width changes.
@@ -157,13 +156,13 @@
                 <div class="visible-lg-block visible-md-block hidden-sm hidden-xs">
                     <!-- <div>  -->
                     <p>
-                        <h1>Hangman Game</h1>
+                        <h1>Test</h1>
                     </p>
                 </div>
                 <div class="hidden-lg hidden-md visible-sm-block visible-xs-block">
                     <!-- <div>  -->
                     <p>
-                        <h1>Hangman</h1>
+                        <h1>Test</h1>
                     </p>
                 </div>
             </div>
@@ -176,18 +175,13 @@
                 </div>
                 <div class="row ">
                     <!-- This is the column with buttons -->
-                    <button style="Float: left; " id="btnWords" class="bigButton " data-toggle="tooltip " title="View
-                        answer, word lists, and dictionaries ">WORDS </button>
-                    <button style="Float: left; " id="btnPlay" class="bigButton " data-toggle="tooltip " title="Play the
-                        game ">PLAY </button>
-                    <button style="Float: left; " id="btnHiScores" class="bigButton " data-toggle="tooltip " title="high
-                        scores ">HI SCORES</button>
-                    <button style="Float: left; " id="btnHelp" class="bigButton " data-toggle="tooltip " title="Help and
-                        about ">
+                    <button style="Float: left; " id="btnWords" class="bigButton " data-toggle="tooltip " title="View answer, word lists, and dictionaries ">WORDS </button>
+                    <button style="Float: left; " id="btnPlay" class="bigButton " data-toggle="tooltip " title="Play the game ">PLAY </button>
+                    <button style="Float: left; " id="btnHiScores" class="bigButton " data-toggle="tooltip " title="high scores ">HI SCORES</button>
+                    <button style="Float: left; " id="btnHelp" class="bigButton " data-toggle="tooltip " title="Help and about ">
                         <span class="glyphicon glyphicon-info-sign "></span>
                     </button>
-                    <button style="Float: left; " id="btnSettings" class="bigButton " data-toggle="tooltip " title="Settings
-                        for game ">
+                    <button style="Float: left; " id="btnSettings" class="bigButton " data-toggle="tooltip " title="Settings for game ">
                         <span class="glyphicon glyphicon-cog "></span>
                     </button>
                 </div>
@@ -298,28 +292,27 @@
     <script>
         //activate BootStrap tool tips
         $(document).ready(function () {
-            $('[data-toggle="tooltip "]').tooltip();
+            $('[data-toggle="tooltip"]').tooltip();
         });
 
-        //initialize once on startup
+        //initialize once on startup  will also be the play button
         gameGuess.init();
         gameGuess.redrawResultsStr(answer.wordCurrAnswerCapsStr);
         playObj.displayCorrectPic( gameGuess );
-        //playObj.displayCorrectPic(gameGuess);
 
         //here is the main loop now for key presses
         document.onkeyup = function (event) {
-            var keyPressChar = "a ";  //just to make sure it is a character
+            var keyPressChar = "a";  //just to make sure it is a character
             // Determines which key was pressed.
             keyPressChar = event.key;
             var userGuessChar = keyPressChar.toUpperCase();
             gameGuess.pushLetterPicked(userGuessChar, answer.wordCurrAnswerCapsStr);
             playObj.displayCorrectPic(gameGuess);
             if (gameGuess.isGameOverMatch === true) {
-                modalOverWon.style.display = "block ";
+                modalOverWon.style.display = "block";
             }
             if (gameGuess.isGameOverLost === true) {
-                modalOverLost.style.display = "block ";
+                modalOverLost.style.display = "block";
                 var modalLostAnswerText = document.getElementById('modLostAnswer');
                 modalLostAnswerText.textContent = "answer was: " + " " + answer.wordCurrAnswerCapsStr;
             }

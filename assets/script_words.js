@@ -7,7 +7,7 @@
 for (var i = 0; i < 4; i++) {
     wordListDict[i] = [];
 }
-wordListDict[0] = ["House", "Desk", "Boat", "Carpet", "Train", "Lake"];
+wordListDict[0] = ["House", "Ladder", "Boat", "Carpet", "Train", "Lake"];
 wordListDict[1] = ["Computer", "Tablet", "Memory", "Battery", "HTML", "Javascript", "Android"];  //computer
 wordListDict[2] = ["Atom", "Thermal Dynamics", "Carbon", "Conduction"];   //technical
 wordListDict[3] = ["Jesus", "Moses", "Noah", "Adam", "Pharoah", "Exodus", "Genesis", "Romans"]; //religious
@@ -71,7 +71,7 @@ wordListObj.initValues();
 
 // *RPB test purposes only
 wordListObj.loadWordFromDict( wordListDict );
-wordListObj.pickNextWordFromDict( wordListDict );
+wordListObj.pickNextWordFromDict( wordListDict );  //makes it jump one forward
 //answer.loadFromDict( wordListDict, wordListObj.numDictToUse, wordListObj.numWordToUse );
 
 

@@ -141,10 +141,17 @@ var gameGuess = {
                     //there is a match so index of results is same pos as answerIn
                     this.numCorrect++;
                     this.resultsChr[j] = answerIn.charAt(j);
-                    this.lettersGoodChr.push(answerIn.charAt(j));
-                    this.lettersGoodStr = this.lettersGoodStr + answerIn.charAt(j);
+                    //check for duplicate letters to not put in two
+
+                    //don't push into the Good Str unless it isn't there alread
+                    //this.lettersGoodChr.push(answerIn.charAt(j));
+                    if ( this.lettersGoodStr.indexOf( this.lettersPicked[i] ) < 0 ) {
+                        this.lettersGoodChr.push(this.lettersPicked[i]);
+                        this.lettersGoodStr = this.lettersGoodStr + this.lettersPicked[i];
+                    };
+
                     noLetterFound = false;
-                }
+                };
             }
             if (noLetterFound === true) {
                 //there was not a match
@@ -198,7 +205,6 @@ var gameGuess = {
         document.querySelector("#lblStatGuessesLeft").textContent = this.numLeft;
         document.querySelector("#lblStatNumCorrect").textContent = this.numCorrect;
         document.querySelector("#lblStatNumWrong").textContent = this.numWrong;
-
     },
 
 
@@ -209,7 +215,7 @@ var gameGuess = {
         var chrWorking = chrIn.toUpperCase();
 
         //check to see if user typed in the character already
-        var posKeyInStr = this.lettersPickedStr.indexOf( chrWorking );
+        var posKeyInStr = this.lettersPickedStr.indexOf(chrWorking);
 
         if ((posKeyInStr >= 0) && (this.lettersPickedStr.length > 0)) {
             modalKeyDup.style.display = "block";
