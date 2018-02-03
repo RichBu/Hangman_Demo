@@ -304,7 +304,8 @@
         //initialize once on startup
         gameGuess.init();
         gameGuess.redrawResultsStr(answer.wordCurrAnswerCapsStr);
-        playObj.displayCorrectPic(gameGuess);
+        playObj.displayCorrectPic( gameGuess );
+        //playObj.displayCorrectPic(gameGuess);
 
         //here is the main loop now for key presses
         document.onkeyup = function (event) {

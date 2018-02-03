@@ -274,6 +274,7 @@ var playObj = {
         "Ready_pic.png",        //1 = ready
         "Start_02.png",  //press any letter  when bad && good both = 0
     ],  //array of image names
+
     displayCorrectPic: function (gameGuessObjIn) {
         //put the correct picture onto the display
         var imgName = "";  //name of the pict file to pull up
@@ -301,7 +302,7 @@ var playObj = {
     }
 };
 
-
+/*
 var statsDisp = {
 
 };
@@ -310,6 +311,7 @@ var statsDisp = {
 var gameSettings = {
 
 };
+*/
 
 
 

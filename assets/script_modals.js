@@ -18,7 +18,7 @@ var modalPlay = document.getElementById('modPlay');
 var modalWords = document.getElementById('modWords');
 var modalOverWon = document.getElementById('modOverWon');
 var modalOverLost = document.getElementById('modOverLost');
-//var modalKeyDup = document.getElementById('modKeyDup');
+var modalKeyDup = document.getElementById('modKeyDup');
 
 // Get the button that opens the modal
 var btnHelp = document.getElementById("btnHelp");
