@@ -10,3 +10,16 @@
 
     */
 
+    var modalKeyDup = document.getElementById('modKeyDup');
+
+    var btnNewGame = document.getElementById("btnNewGame");
+
+
+    btnNewGame.onclick = function () {
+        //starting a new game is in the playObj
+        playObj.startNewGame();
+        modalPlay.style.display = "none";
+    };
+
+
+

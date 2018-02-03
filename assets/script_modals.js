@@ -19,6 +19,7 @@ var modalWords = document.getElementById('modWords');
 var modalOverWon = document.getElementById('modOverWon');
 var modalOverLost = document.getElementById('modOverLost');
 var modalKeyDup = document.getElementById('modKeyDup');
+var modalGameOver = document.getElementById('modGameOver');
 
 // Get the button that opens the modal
 var btnHelp = document.getElementById("btnHelp");
@@ -64,6 +65,7 @@ var closeModWords = document.getElementById("closeModWords");
 var closeModOverWon = document.getElementById("closeModOverWon");
 var closeModOverLost = document.getElementById("closeModOverLost");
 var closeModKeyDup = document.getElementById("closeModKeyDup");
+var closeModGameOver = document.getElementById("closeModGameOver");
 
 
 // When the user clicks on <span> (x), close the modal
@@ -95,10 +97,15 @@ closeModKeyDup.onclick = function () {
     modalKeyDup.style.display = "none";
 }
 
+closeModGameOver.onclick = function () {
+    modalGameOver.style.display = "none";
+}
+
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     //just mass close everything
-
+    //replace with Case statement  in future
     if (event.target == modalHelp) {
         modalHelp.style.display = "none";
     }
@@ -122,6 +129,9 @@ window.onclick = function (event) {
     }
     if (event.target == modalKeyDup) {
         modalKeyDup.style.display = "none";
+    }
+    if (event.target == modalGameOver) {
+        modalGameOver.style.display = "none";
     }
 
 }

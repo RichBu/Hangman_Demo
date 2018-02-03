@@ -305,6 +305,18 @@ var playObj = {
     init: function () {
         //reset the variables for play
         this.playState = 0;
+    },
+
+    startNewGame: function () {
+        //everything needed for a new game
+        this.init();
+        answer.clear();
+        gameGuess.init();
+        gameGuess.isGameOverLost = false;
+        gameGuess.isGameOverMatch = false;
+        wordListObj.pickNextWordFromDict( wordListDict );
+        gameGuess.redrawResultsStr(answer.wordCurrAnswerCapsStr);
+        playObj.displayCorrectPic(gameGuess);
     }
 };
 
